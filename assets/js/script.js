@@ -29,6 +29,31 @@ search.addEventListener('click', () => {
       const description = document.querySelector('.weather-box description');
       const humidity = document.querySelector('.weather-box .humidity span');
       const wind = document.querySelector('.weather-box .wind span');
+
+      switch (json.weather[0].main) {
+        case 'Clear':
+          image.src = 'img/clear.png';
+          break;
+
+        case 'Rain':
+          image.src = 'img/rain.png';
+          break;
+
+        case 'Snow':
+          image.src = 'img/snow.png';
+          break;
+
+        case 'Clouds':
+          image.src = 'img/cloud.png';
+          break;
+
+        case 'Mist':
+          image.src = 'img/mist.png';
+          break;
+
+        default:
+          image.src = '';
+      }
     })
   }
 });
